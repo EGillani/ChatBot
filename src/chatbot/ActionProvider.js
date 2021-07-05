@@ -10,12 +10,23 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleJavascriptQuiz = () => {
+  handleChallenges = () => {
     const message = this.createChatBotMessage(
-      "Fantastic. Here is your quiz. Good luck!",
+      "Challenge Details!",
       {
-        widget: "javascriptQuiz",
+        widget: "challenges",
       }
+    );
+
+    this.addMessageToState(message);
+  };
+
+  
+  handleEventQuestion = () => {
+    var win = window.open("https://organize.mlh.io/participants/events/6813-init-2022", '_blank');
+    const message = this.createChatBotMessage(
+      "A link showing you the event details should have opened!", 
+      win.focus()
     );
 
     this.addMessageToState(message);
